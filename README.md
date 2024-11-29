@@ -58,22 +58,12 @@ The images are loaded and resized to 224x224 pixels to match the input size of M
 
 ## File Structure
 
-```
-/project-root
-│
-├── captions.txt          # Captions file containing image captions
-├── Images/               # Directory containing the images
-├── features.pkl          # Pickle file containing extracted image features
-├── tokenizer.pkl         # Pickle file containing the tokenizer
-├── model.py              # Python file containing the image captioning model
-├── README.md             # This README file
-└── requirements.txt      # List of required libraries
-```
+
 
 ## How to Run
 
-1. **Download the dataset**: Ensure the `Flickr8k` dataset is downloaded and structured as mentioned above.
-   
+1. **Download the dataset**: Ensure the `Flickr8k` dataset is downloaded form this link https://www.kaggle.com/datasets/adityajn105/flickr8k
+
 2. **Preprocess data**: The script preprocesses both images and captions. It extracts image features using MobileNetV3 and cleans the captions.
 
 3. **Training the model**:
@@ -81,16 +71,7 @@ The images are loaded and resized to 224x224 pixels to match the input size of M
    - The model architecture consists of an image feature extractor (MobileNetV3) followed by an RNN for generating captions.
    - The model is compiled using the Adam optimizer and categorical crossentropy loss function.
 
-4. **Model Training**:
-   Run the following script to train the model:
-
-   ```bash
-   python model.py
-   ```
-
-   This will train the model for 35 epochs and save the model and tokenizer for future inference.
-
-5. **Generate Captions**: Once the model is trained, you can use it to generate captions for new images by passing an image through the feature extractor and then generating a caption using the RNN model.
+4. **Generate Captions**: Once the model is trained, you can use it to generate captions for new images by passing an image through the feature extractor and then generating a caption using the RNN model.
 
 ## Model Details
 
@@ -122,7 +103,3 @@ After training, the model should be able to generate captions for new images by 
 - **Flickr8k Dataset**: The dataset used for this project is the Flickr8k dataset, which contains images and associated captions.
 - **MobileNetV3**: Pre-trained MobileNetV3 model from Keras Applications used for feature extraction.
 - **TensorFlow**: The framework used for building and training the model.
-
----
-
-Feel free to adjust this template according to the specifics of your project, such as directory names or any additional instructions.
